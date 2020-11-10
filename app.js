@@ -63,7 +63,7 @@ client.on("message", (message) => {
     message.channel.send(content.join(" "))
 })
 
-setInterval(() => { if (channel != null) { channel.send(blabs[Math.floor(Math.random() * blabs.length)]) } }, process.env.BLAB_INTERVAL)
+setInterval(() => { if (channel != null && should()) { channel.send(blabs[Math.floor(Math.random() * blabs.length)]) } }, process.env.BLAB_INTERVAL)
 
 client.on("ready", () => { console.log(`Logged in as ${client.user.tag}`) })
 client.login(process.env.TOKEN)
