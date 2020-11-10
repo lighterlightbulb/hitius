@@ -8,7 +8,7 @@ const matchers = (process.env.MATCHERS).split(",")
 const blabs = (process.env.BLABS).split(",")
 var channel = null
 
-function should() { return Math.floor(Math.random() * 10) > 5 }
+function should() { return Math.random() > 0.5 }
 
 function garble(text) {
     let characters = text.split("") // Split
