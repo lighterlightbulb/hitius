@@ -37,7 +37,10 @@ client.on("message", (message) => {
     if (message.author.id == client.user.id) { return } // Skip if this is us
     if (channel == null) { channel = message.channel } // Set the current channel if it hasn't been set
 
-    let content = message.content.split(" ")
+    let content = message.content.trim() // trim
+    content = content.replace(/\s+/g, "") // remove extra unnecessary whitespace
+    content = content.split(" ") // split by " "
+    
     let indice = -1
 
     for (let i = 0; i < content.length; i++) {
